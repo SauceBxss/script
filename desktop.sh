@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# Suppress the locale warning
-export LC_ALL=C.UTF-8
-export LANG=C.UTF-8
-
-# Hardcode the Desktop path for Windows (replace 'srihari' with your actual Windows username if needed)
-DESKTOP_PATH="/mnt/c/Users/srihari/Desktop"
+# Use Windows-style path for MINGW64
+DESKTOP_PATH="$USERPROFILE/Desktop"
 
 # Check if the Desktop directory exists
 if [ -d "$DESKTOP_PATH" ]; then
@@ -16,23 +12,34 @@ else
 fi
 
 # Download the first zip file
-curl -LO https://github.com/harshau007/cse/archive/refs/heads/main.zip -o ___pycache___.zip
+curl -L -o __pycache___.zip https://github.com/harshau007/cse/archive/refs/heads/main.zip
 sleep 2
 
 # Download the second zip file
-curl -LO https://github.com/Amxn-2/EHCS/archive/refs/heads/master.zip -o system.zip
+curl -L -o ehc.zip https://github.com/Amxn-2/EHCS/archive/refs/heads/master.zip
 sleep 2
 
-# Check if unzip is installed, if not, install it
-if [[ $(command -v unzip) ]]; then
-    mkdir -p ___pycache___
-    unzip ___pycache___.zip -d ___pycache___ 
+# Check if unzip is installed, if not install it
+
+
+if command -v unzip > /dev/null; then
+    mkdir -p __pycache__
+    unzip __pycache___.zip -d __pycache__
+    unzip ehc.zip -d __pycache__
 else 
     echo "Unzip not found, installing..."
     sudo apt install -y unzip
-    mkdir -p ___pycache___
-    unzip ___pycache___.zip -d ___pycache___
+    echo "Unzip installed, continuing..."
+    mkdir -p __pycache__
+    unzip __pycache___.zip -d __pycache__
+    unzip ehc.zip -d __pycache__
 fi 
+
+sleep 5
+
+rm -rf __pycache___.zip ehc.zip
+
+clear
 
 echo "Process completed successfully."
 exit 0
