@@ -5,7 +5,7 @@ DESKTOP_PATH="$USERPROFILE/Desktop"
 
 # Check if the Desktop directory exists
 if [ -d "$DESKTOP_PATH" ]; then
-    mkdir "$DESKTOP_PATH/Desktop/practical-exam" && cd "$DESKTOP_PATH" || { echo "Failed to navigate to Desktop"; exit 1; }
+    mkdir -p "$DESKTOP_PATH/practicals" && cd "$DESKTOP_PATH" || { echo "Failed to navigate to Desktop"; exit 1; }
 else
     echo "Desktop directory not found."
     exit 1
