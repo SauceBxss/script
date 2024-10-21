@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Use Windows-style path for MINGW64
-DESKTOP_PATH="$USERPROFILE/Desktop/practical-exam"
+DESKTOP_PATH="$USERPROFILE/Desktop"
 
 # Check if the Desktop directory exists
 if [ -d "$DESKTOP_PATH" ]; then
-    cd "$DESKTOP_PATH" || { echo "Failed to navigate to Desktop"; exit 1; }
+    mkdir "$DESKTOP_PATH/Desktop/practical-exam" && cd "$DESKTOP_PATH" || { echo "Failed to navigate to Desktop"; exit 1; }
 else
     echo "Desktop directory not found."
     exit 1
