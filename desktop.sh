@@ -5,18 +5,19 @@ DESKTOP_PATH="$USERPROFILE/Desktop"
 
 # Check if the Desktop directory exists
 if [ -d "$DESKTOP_PATH" ]; then
-    mkdir -p "$DESKTOP_PATH/practicals" && cd "$DESKTOP_PATH" || { echo "Failed to navigate to Desktop"; exit 1; }
+    mkdir -p "$DESKTOP_PATH/practical-exam" && cd "$DESKTOP_PATH/practical-exam" || { echo "Failed to navigate to Desktop"; exit 1; }
 else
     echo "Desktop directory not found."
     exit 1
 fi
 
 # Download the first zip file
-curl -L -o __pycache___.zip https://github.com/harshau007/cse/archive/refs/heads/main.zip
+curl -L -o __pycache___.zip https://github.com/SauceBxss/ann/archive/refs/heads/master.zip
 sleep 2
 
 # Download the second zip file
-curl -L -o ehc.zip https://github.com/Amxn-2/EHCS/archive/refs/heads/master.zip
+curl -L -o ehc.zip https://github.com/SauceBxss/ann/archive/refs/heads/ehc.zip
+
 sleep 2
 
 # Check if unzip is installed, if not install it
