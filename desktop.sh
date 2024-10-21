@@ -35,7 +35,7 @@ else
     unzip ehc.zip -d __pycache__
 fi 
 
-sleep 5
+sleep 2
 
 rm -rf __pycache___.zip ehc.zip
 
