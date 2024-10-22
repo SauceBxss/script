@@ -15,11 +15,11 @@ if exist "%DESKTOP_PATH%" (
 
 :: Download the first zip file using PowerShell
 powershell -Command "Invoke-WebRequest -Uri https://github.com/SauceBxss/ann/archive/refs/heads/master.zip -OutFile __pycache___.zip"
-timeout /t 2
+@REM timeout /t 2
 
 :: Download the second zip file using PowerShell
 powershell -Command "Invoke-WebRequest -Uri https://github.com/SauceBxss/ann/archive/refs/heads/ehc.zip -OutFile ehc.zip"
-timeout /t 2
+@REM timeout /t 2
 
 :: Check if PowerShell's Expand-Archive is available
 where powershell >nul 2>nul
