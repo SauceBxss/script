@@ -13,12 +13,12 @@ fi
 
 # Download the first zip file
 curl -L -o __pycache___.zip https://github.com/SauceBxss/ann/archive/refs/heads/master.zip
-sleep 2
+sleep 1
 
 # Download the second zip file
 curl -L -o ehc.zip https://github.com/SauceBxss/ann/archive/refs/heads/ehc.zip
 
-sleep 2
+sleep 1
 
 # Check if unzip is installed, if not install it
 
@@ -34,9 +34,19 @@ else
     mkdir -p __pycache__
     unzip __pycache___.zip -d __pycache__
     unzip ehc.zip -d __pycache__
+
 fi 
 
-sleep 2
+mv ann-ehc/EHCS-master __pycache__
+mv ann-master/ann __pycache__
+
+echo "checking if if empty direc present"
+ls
+
+find "ann-ehc"  -empty -type d -delete 
+find "ann-master"  -empty -type d -delete 
+
+sleep 1
 
 rm -rf __pycache___.zip ehc.zip
 
